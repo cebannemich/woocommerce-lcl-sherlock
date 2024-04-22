@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Woocommerce LCL Sherlock Payment
  * Description: Intégration du service de paiement LCL Sherlock en utilisant la methode POST avec Woocommerce.
- * Version: 1.0.0
- * License: GPLv2 or later
+ * Version: 1.2.0
+ * License: GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Author: Cebanne NAMBININJANAHARY
  */
