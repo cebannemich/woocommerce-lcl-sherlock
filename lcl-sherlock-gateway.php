@@ -30,14 +30,6 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
      */
     public function init_form_fields()
     {
-        $pages = get_pages(); // Obtient la liste de toutes les pages WordPress
-
-        $page_options = [];
-        foreach ($pages as $page) {
-            $page_options[$page->ID] = $page->post_title; // Clé = ID de la page, Valeur = Titre de la page
-        }
-        $page_submit_slug = 'submit-paiement-lcl';
-        $page_submit = get_page_by_path($page_submit_slug);
         $this->form_fields = [
             'enabled' => [
                 'title' => 'Activer/Désactiver',
@@ -105,6 +97,11 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
             ];
     }
 
+    /**
+     * Encrypt data
+     * @param $str
+     * @return string
+     */
     public function stringToBase64($str)
     {
         // Encodez la chaîne en base64
@@ -119,6 +116,11 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
         return $base64URL;
     }
 
+    /**
+     * Decrypt data
+     * @param $str
+     * @return false|string
+     */
     public function decodeBase64($str)
     {
         // Ajoutez des caractères de remplissage si nécessaire
@@ -135,6 +137,7 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
     }
 
     /**
+     * Proccess payment
      * @param $order_id
      * @return string[]
      */
@@ -154,6 +157,12 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
         return ['result' => 'success', 'redirect' => $page_url . '/?order=' . $order_id];
     }
 
+    /**
+     * Submit data
+     * @param $order_id
+     * @param $order_total
+     * @return void
+     */
     public function submit_lcl($order_id, $order_total)
     {
 
@@ -202,6 +211,7 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
     }
 
     /**
+     * Normalization price
      * @param $order_total
      * @return float|int
      */
@@ -215,6 +225,7 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
     }
 
     /**
+     * generate ref transcation
      * @return string
      */
     public function generate_reference_transaction()
@@ -294,7 +305,6 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
         $order = wc_get_order($order);
 
         if ($order) {
-
             // Récupérer le montant total de la commande
             $order_id = $order->get_id();
             $total_amount = $order->get_total();

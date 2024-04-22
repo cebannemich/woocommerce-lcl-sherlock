@@ -1,1 +1,1 @@
-# woo-commerce-lcl-sherlock
+# woocommerce-lcl-sherlock

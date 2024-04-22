@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "download_url": "https://example.com/plugins/mon-plugin/mon-plugin.zip",
+  "sections": {
+    "description": "Description des mises à jour"
+  }
+}

@@ -5,6 +5,8 @@
  * Version: 1.0
  * Author: Cebanne NAMBININJANAHARY
  */
+define( 'PLUGIN_VERSION', '1.0.0' );
+define( 'PLUGIN_SLUG', 'woocommerce-lcl-sherlock' );
 
 add_action( 'plugins_loaded', 'init_lcl_sherlock_gateway' );
 
