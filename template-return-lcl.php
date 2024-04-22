@@ -2,6 +2,7 @@
 /*
 Template Name: Return Paiement LCL
  */
+
 get_header();
 $sherlock_gateway = new WC_LCL_Sherlock_Gateway();
 $message = "";
