@@ -1,12 +1,15 @@
 <?php
 /**
  * Plugin Name: Woocommerce LCL Sherlock Payment
- * Description: Intégration du service de paiement LCL Sherlock en utilisant la methode POST.
- * Version: 1.0
+ * Description: Intégration du service de paiement LCL Sherlock en utilisant la methode POST avec Woocommerce.
+ * Version: 1.0.0
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Author: Cebanne NAMBININJANAHARY
  */
-define( 'PLUGIN_VERSION', '1.0.0' );
-define( 'PLUGIN_SLUG', 'woocommerce-lcl-sherlock' );
+
+// Inclure le fichier plugin-update-checker.php
+require_once plugin_dir_path(__FILE__) . 'plugin-update-checker.php';
 
 add_action( 'plugins_loaded', 'init_lcl_sherlock_gateway' );
 
