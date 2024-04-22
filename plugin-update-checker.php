@@ -1,8 +1,11 @@
 <?php
-require_once 'plugin-update-checker-5.4/plugin-update-checker.php';
 
-$WooLclSherlockUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://raw.githubusercontent.com/cebannemich/woocommerce-lcl-sherlock/main/info.json?token=GHSAT0AAAAAACRJYVXQUZ2RIC2EIPTL2BSAZRGIQSQ',
+require 'plugin-update-checker-5.4/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$WooLclSherlockUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://raw.githubusercontent.com/cebannemich/woocommerce-lcl-sherlock/v1.2.0/info.json?token=GHSAT0AAAAAACRJYVXQKQBLT77WQTUQC3HEZRGLRFA',
     __FILE__,
     'woocommerce-lcl-sherlock'
 );
@@ -13,3 +16,5 @@ function woocommerce_lcl_sherlock_check_update() {
     global $WooLclSherlockUpdateChecker;
     $WooLclSherlockUpdateChecker->requestUpdate();
 }
+
+?>
