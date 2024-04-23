@@ -94,6 +94,12 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
                 'description' => '',
                 'default' => 'Votre commande a  été annuler',
             ],
+            'msg_command_echec' => [
+                'title' => 'Message pour la commande echouer',
+                'type' => 'textarea',
+                'description' => '',
+                'default' => 'Votre commande a  été echouée',
+            ],
             ];
     }
 
@@ -342,8 +348,12 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
                 break;
             }
         }
+        //traitement status
+
         if ($responseCode == '00') {
             $message_return .= $this->get_option('msg_command_confirm');
+        }elseif ($responseCode == '17'){
+            $message_return .= $this->get_option('msg_command_echec');
         }
         else {
             $message_return .= $this->get_option('msg_command_annuler');

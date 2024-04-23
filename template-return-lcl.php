@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <main <?php generate_do_attr('main'); ?>>
         <div>
             <?php
-            echo $message;
+                 echo $message;
             ?>
         </div>
     </main>
