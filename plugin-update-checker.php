@@ -10,7 +10,7 @@ try {
         'woocommerce-lcl-sherlock'
     );
     //Set the branch that contains the stable release.
-//    $WooLclSherlockUpdateChecker->setBranch('main');
+    //    $WooLclSherlockUpdateChecker->setBranch('main');
 
     // Déclencher la vérification des mises à jour
     add_action('init', function () use ($WooLclSherlockUpdateChecker) {

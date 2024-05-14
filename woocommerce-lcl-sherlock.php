@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woocommerce LCL Sherlock Payment
  * Description: Intégration du service de paiement LCL Sherlock en utilisant la methode POST avec Woocommerce.
- * Version: 1.2.3
+ * Version: 1.2.4
  * Author: Cebanne NAMBININJANAHARY
  */
 

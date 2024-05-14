@@ -91,7 +91,7 @@ class WC_LCL_Sherlock_Gateway extends WC_Payment_Gateway
             'msg_command_annuler' => [
                 'title' => 'Message pour la commande annulée',
                 'type' => 'textarea',
-                'description' => '',
+                'description' => 'test',
                 'default' => 'Votre commande a  été annuler',
             ],
             'msg_command_echec' => [
